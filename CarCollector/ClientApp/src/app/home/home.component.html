@@ -1,0 +1,16 @@
+<header>
+    <p> Welcome to the Car Collector! <br>
+    Here you can view your car collection by garage, search for new cars to add based on existing types, or enter a new custom car.<br>
+    </p>
+</header>
+<mat-divider></mat-divider>
+<br>
+<app-garage-selector></app-garage-selector>
+<div *ngIf="selectedGarage && selectedGarage.cars">
+    <p > You currently have {{selectedGarage.cars.length}} cars in your garage</p>
+    <button mat-button [routerLink]="['/my-garage']">Open My Garage</button>
+</div>
+<br>
+<br>
+<p> Looking to add to your garage?  Search from {{carInfo.length}} options</p>
+<button mat-button [routerLink]="['/search-cars']">Search for cars</button>

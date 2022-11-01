@@ -1,0 +1,10 @@
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Select Garage</mat-label>
+    <mat-select [(ngModel)]=selectedGarage (selectionChange)="updateSelectedGarage();">
+      <mat-option *ngFor="let garage of garages" [value]=garage>
+        {{garage.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

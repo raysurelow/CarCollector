@@ -1,0 +1,28 @@
+<p>New Car Details</p>
+<mat-form-field appearance="fill">
+    <mat-label>Make</mat-label>
+    <input matInput [(ngModel)]="make">
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Model</mat-label>
+    <input matInput [(ngModel)]="model">
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Year</mat-label>
+    <input matInput [(ngModel)]="year">
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <input matInput [(ngModel)]="description">
+</mat-form-field>
+<div>
+    <p>Picture of vehicle:</p>
+    <span *ngIf="image != '' && image != undefined">
+        <img mat-card-image src="{{image}}" alt="Photo of the vehicle">
+    </span>
+    <input type="file" name="file" id="file" (change)="onFileChanged($event)" />
+</div>
+<div><br></div>
+<button [disabled]="uploadButtonDisabled" mat-button (click)="uploadFile()">Upload File</button><span *ngIf="message != ''">  {{message}}</span>
+<div><br></div>
+<button mat-button (click)="createCar()">Add to garage</button>
